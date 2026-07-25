@@ -3,18 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>China 2026 — Route 3 Day-by-Day</title>
+<title>China 2026 — The Grand Tour, via Hong Kong</title>
 <style>
   :root{
     --navy:#1f3864; --teal:#2e75b6; --grey:#5b6470; --line:#dde4ec;
     --bg:#ffffff; --card:#ffffff; --amber:#b26a00; --amberbg:#fff8e7;
     --green:#2e7d32; --sand:#8a6d3b; --link:#0563c1; --lightbg:#eaf0f7;
+    --newbg:#eef7ef; --newline:#2e7d32;
   }
   @media (prefers-color-scheme: dark){
     :root{
       --navy:#9db8e8; --teal:#6ea8dc; --grey:#a3adba; --line:#2b3442;
       --bg:#12161c; --card:#171d25; --amberbg:#2a2314; --amber:#e0a44a;
       --green:#7bc47f; --sand:#c6a86a; --link:#79b8ff; --lightbg:#1b2430;
+      --newbg:#16251a; --newline:#4f9a55;
     }
   }
   *{box-sizing:border-box}
@@ -25,16 +27,21 @@
   }
   @media (prefers-color-scheme: dark){ body{color:#dce3ea} }
   .wrap{max-width:860px;margin:0 auto;padding:32px 20px 80px}
-  header{border-bottom:3px solid var(--teal);padding-bottom:18px;margin-bottom:28px}
+  header{border-bottom:3px solid var(--teal);padding-bottom:18px;margin-bottom:22px}
   h1{font-size:2rem;line-height:1.2;margin:0 0 6px;color:var(--navy);letter-spacing:-.02em}
   .sub{color:var(--teal);font-style:italic;font-size:1.05rem;margin:0}
   .meta{color:var(--grey);font-size:.85rem;margin-top:10px}
+
+  .hero{margin:0 0 26px}
+  .hero img{width:100%;height:auto;display:block;border-radius:8px}
+  .hero figcaption{font-size:.76rem;color:var(--grey);font-style:italic;margin-top:6px}
 
   .panel{background:var(--lightbg);border-left:5px solid var(--teal);border-radius:0 6px 6px 0;padding:16px 18px;margin:0 0 16px}
   .panel h2{margin:0 0 10px;font-size:1rem;color:var(--navy);text-transform:uppercase;letter-spacing:.06em}
   .panel p{margin:0 0 8px}
   .panel p:last-child{margin-bottom:0}
   .panel.warn{background:var(--amberbg);border-left-color:var(--amber)}
+  .panel.new{background:var(--newbg);border-left-color:var(--newline)}
   .actline{margin:0 0 6px !important}
   .actline b{color:var(--green)}
 
@@ -47,6 +54,9 @@
   .dnum{font-weight:700;color:var(--teal);font-size:1.02rem;white-space:nowrap}
   .ddate{color:var(--grey);font-size:.85rem;white-space:nowrap}
   .dtitle{font-weight:700;color:var(--navy);font-size:1.12rem}
+  .tag{font-size:.68rem;letter-spacing:.07em;text-transform:uppercase;font-weight:700;
+       background:var(--green);color:#fff;padding:2px 7px;border-radius:3px;white-space:nowrap}
+  @media (prefers-color-scheme: dark){ .tag{color:#10190f} }
   .day p{margin:0 0 10px}
   .mv{font-size:.85rem;color:var(--grey);margin:0 0 8px}
   .mv b{color:var(--grey);letter-spacing:.04em;text-transform:uppercase;font-size:.75rem;margin-right:4px}
@@ -57,11 +67,24 @@
   a:hover{border-bottom-color:var(--link)}
   .see .dot{color:var(--grey);margin:0 7px}
 
+  figure.ph{margin:0 0 12px}
+  figure.ph img{width:100%;height:auto;display:block;border-radius:6px}
+  figure.ph figcaption{font-size:.75rem;color:var(--grey);font-style:italic;margin-top:5px}
+
+  .tw{overflow-x:auto;margin:0 0 16px;-webkit-overflow-scrolling:touch}
+  table{border-collapse:collapse;width:100%;font-size:.88rem;min-width:520px}
+  th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--navy);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;border-bottom:2px solid var(--teal)}
+  td.dt{white-space:nowrap;color:var(--grey);font-size:.82rem}
+  tr.work td{background:var(--bg)}
+  tr.work td.ev{font-weight:700;color:var(--navy)}
   .fin{background:var(--lightbg);border-radius:6px;padding:16px 18px;margin-top:26px}
   .fin .d{font-weight:700;color:var(--green)}
   footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--line);color:var(--grey);font-size:.8rem;font-style:italic}
-  ul{padding-left:20px}
+  ul,ol{padding-left:20px}
   li{margin-bottom:7px}
+  .credits{font-size:.74rem;color:var(--grey);line-height:1.5}
+  .credits a{color:var(--grey)}
   @media (max-width:600px){
     .wrap{padding:20px 15px 60px}
     h1{font-size:1.55rem}
@@ -73,169 +96,283 @@
 <div class="wrap">
 
 <header>
-  <h1>China 2026 — Route 3 Day-by-Day</h1>
-  <p class="sub">The Grand Tour: Guizhou → Gannan → Silk Road</p>
-  <p class="meta">Itzhak &amp; Romy · Aug 29 – Sep 14, 2026 · draft for discussion</p>
+  <h1>China 2026 — The Grand Tour</h1>
+  <p class="sub">Hong Kong → Guizhou → Gannan → Silk Road → Beijing → Shenzhen</p>
+  <p class="meta">Itzhak &amp; Romy · Aug 26 – Sep 23, 2026 · v2, rebuilt around a Hong Kong gateway and an 18-day adventure leg</p>
 </header>
 
+<figure class="hero">
+  <img src="img/hongkong.jpg" alt="Victoria Harbour, Hong Kong, at night" loading="eager">
+  <figcaption>Hong Kong is now the gateway at both ends — the one change that makes everything else in this plan work.</figcaption>
+</figure>
+
+<div class="panel new">
+  <h2>What changed in v2, and why</h2>
+  <p><b>1 · Fly in and out of Hong Kong, not Beijing.</b> This is the whole unlock. Transpacific flights to Beijing all leave the US around midday and land in the evening, so departing Columbus on the night of Aug 26 buys you nothing. Flights to <i>Hong Kong</i> leave the US after midnight and land at about 06:30 — so a Wednesday-evening CMH departure puts you on the ground in Asia the morning of Fri Aug 28 instead of that night. That is a full extra day. Hong Kong is also where the trip ends: Shenzhen is twenty minutes from Hong Kong West Kowloon, so one round trip covers both ends and matches PHBS's "to or from Shenzhen or Hong Kong" reimbursement rule.</p>
+  <p><b>2 · Enter overland, and delete a flight.</b> From Hong Kong West Kowloon a single high-speed train runs into Guizhou on the Guangzhou–Guiyang line, stopping at Congjiang — about four hours, and Zhaoxing is half an hour from the station. That removes the Beijing→Guiyang flight entirely and turns the arrival day into a productive travel day instead of a wasted evening.</p>
+  <p><b>3 · The extra day kills the worst drive.</b> v1's Day 13 was seven hours of pure transit from Zhagana to Lanzhou. It is now split: a night in <b>Linxia</b>, the Hui Muslim city at the edge of the plateau, then <b>Bingling Temple</b> — cliff-carved Buddhist grottoes reached by boat on the Yellow River — on the way into Lanzhou. A bad day became two good ones.</p>
+  <p><b>4 · Same landing point.</b> You are still in Beijing the evening of Sep 14, with Sep 15 clear before the Tsinghua seminar on Sep 16. Nothing on the work side moved.</p>
+</div>
+
 <div class="panel">
-  <h2>The shape of it</h2>
-  <p><b>Three acts, two internal flights, one long rail leg.</b> Act I is subtropical village China — Dong and Miao, indigo, sour fish soup, karst. Act II is the Tibetan plateau at its least-visited: Labrang, Langmusi, and the rock towers of Zhagana. Act III is high desert — the rainbow Danxia, the Silk Road's western passes, and the Mogao caves.</p>
-  <p class="actline"><b>Act I</b> &nbsp;Days 1–7 · Guizhou · fly in to Guiyang, loop east then west</p>
-  <p class="actline"><b>Act II</b> &nbsp;Days 8–13 · Gannan · fly Guiyang→Lanzhou (1h35m), then a driving loop</p>
-  <p class="actline"><b>Act III</b> &nbsp;Days 14–17 · Silk Road · rail to Zhangye, on to Dunhuang, fly out</p>
-  <p style="margin-top:10px"><i>You are back in Beijing the evening of Sep 14 — a full night's sleep before Sep 15, rather than landing on the morning you need to be working.</i></p>
+  <h2>The whole window, Aug 26 → Sep 23</h2>
+  <div class="tw">
+  <table>
+    <tr><th>Date</th><th>Where</th><th>What</th></tr>
+    <tr><td class="dt">Wed Aug 26</td><td>Columbus</td><td>Depart CMH, evening. Connect at a US hub.</td></tr>
+    <tr><td class="dt">Thu Aug 27</td><td>in the air</td><td>Transpacific departs after midnight (JFK ~01:35, or SFO/LAX ~00:05–00:30).</td></tr>
+    <tr><td class="dt">Fri Aug 28</td><td>Hong Kong → Guizhou</td><td>Land HKG ~06:30. High-speed rail West Kowloon → Congjiang. <b>Day 1.</b></td></tr>
+    <tr><td class="dt">Aug 29 – Sep 3</td><td>Guizhou</td><td>Act I — Dong and Miao villages, indigo, karst. Days 2–7.</td></tr>
+    <tr><td class="dt">Sep 4 – Sep 10</td><td>Gannan</td><td>Act II — Labrang, Langmusi, Zhagana, Linxia, Bingling. Days 8–14.</td></tr>
+    <tr><td class="dt">Sep 11 – Sep 14</td><td>Silk Road</td><td>Act III — Danxia, Dunhuang, the western passes, Mogao. Days 15–18.</td></tr>
+    <tr><td class="dt">Mon Sep 14</td><td>→ Beijing</td><td>Afternoon flight out of Dunhuang. In Beijing that evening.</td></tr>
+    <tr><td class="dt">Tue Sep 15</td><td>Beijing</td><td>Clear. Rest; Romy's first Beijing day.</td></tr>
+    <tr class="work"><td class="dt">Wed Sep 16</td><td>Beijing</td><td class="ev">Tsinghua SEM seminar</td></tr>
+    <tr class="work"><td class="dt">Thu Sep 17</td><td>Beijing</td><td class="ev">PKU Guanghua School of Management</td></tr>
+    <tr><td class="dt">Fri Sep 18</td><td>Beijing</td><td>Buffer / open. The HKU thread is still unresolved.</td></tr>
+    <tr><td class="dt">Sat Sep 19</td><td>→ Shenzhen</td><td>Domestic flight Beijing → Shenzhen.</td></tr>
+    <tr><td class="dt">Sun Sep 20</td><td>Shenzhen</td><td>Open.</td></tr>
+    <tr class="work"><td class="dt">Mon Sep 21</td><td>Shenzhen</td><td class="ev">CUHK-Shenzhen</td></tr>
+    <tr class="work"><td class="dt">Tue Sep 22</td><td>Shenzhen</td><td class="ev">PKU HSBC Business School (PHBS)</td></tr>
+    <tr><td class="dt">Wed Sep 23</td><td>Shenzhen → HKG → home</td><td>Futian → Hong Kong West Kowloon, ~20 min. Fly out of HKG.</td></tr>
+  </table>
+  </div>
+  <p style="margin-top:4px"><i>The seminar paper is <a href="https://onlinelibrary.wiley.com/doi/10.1111/fire.12412">the FIRE piece</a>, about an hour, open to faculty as well as the PhD students.</i></p>
+</div>
+
+<div class="panel">
+  <h2>The tickets, in booking order</h2>
+  <ol>
+    <li><b>International — CMH ⇄ HKG, one round trip.</b> Out the evening of Wed Aug 26; back Wed Sep 23. Cathay's JFK departure leaves ~01:35 and lands HKG 06:30; SFO and LAX have ~00:05–00:30 departures landing about 06:00. Book it round-trip into and out of Hong Kong rather than open-jaw — cheaper, and it fits the PHBS reimbursement rule. <b>Keep the fare changeable until the passport is physically back.</b></li>
+    <li><b>High-speed rail — Hong Kong West Kowloon → Congjiang, Fri Aug 28.</b> The three daily West Kowloon → Guiyang G-trains leave at 10:02, 11:14 and 11:52 and run over the Guangzhou–Guiyang line, on which both Congjiang and Rongjiang are stations. Book West Kowloon → Congjiang directly and confirm your train actually stops there. Take the 11:14 or 11:52 — not the 10:02, which is too tight against a 06:30 landing. Mainland immigration is co-located at West Kowloon, so you clear China before boarding. Chinese rail normally opens booking about 15 days out, so this one waits until roughly Aug 13.</li>
+    <li><b>Guiyang (KWE) → Lanzhou (LHW), Fri Sep 4, morning.</b> 1h35m, and the hinge of the entire trip. Book early and do not take the last departure of the day.</li>
+    <li><b>Rail Lanzhou → Zhangye, Fri Sep 11, midday.</b> About 3h on the Lanzhou–Xinjiang line.</li>
+    <li><b>Zhangye → Dunhuang, Sat Sep 12.</b> Roughly 5h by rail or a short flight. Ask the Gansu operator to price both against that specific date rather than deciding now.</li>
+    <li><b>Dunhuang (DNH) → Beijing, Mon Sep 14, afternoon.</b> Direct where the season supports it, otherwise via Xi'an or Lanzhou. Take the earliest afternoon option that still leaves the 9am Mogao tour intact.</li>
+    <li><b>Beijing → Shenzhen (SZX), Sat Sep 19.</b></li>
+    <li><b>Sep 23 exit.</b> Futian → Hong Kong West Kowloon by rail (~20 min), or the Shekou → HKG SkyPier ferry, which reaches the airport without formally entering Hong Kong. Either route stamps your US passport out of the mainland — and those stamp pages are what Tsinghua needs before the honorarium moves.</li>
+  </ol>
 </div>
 
 <div class="panel warn">
-  <h2>Two honest warnings</h2>
-  <p><b>Day 4 and Day 13 are the hard transfer days.</b> Rongjiang→Leishan (~4h of mountain road) and Zhagana→Lanzhou (~7h) are both long. They are the price of reaching places without airports. Everything else is a comfortable half-day or less.</p>
-  <p><b>This is a full plan with little padding.</b> September rain closes mountain roads in both Guizhou and Gannan occasionally. Treat Day 7 (Qingyan) and Day 16 (western desert) as the two flexible days you can sacrifice if weather forces it.</p>
+  <h2>Five things that can actually break this</h2>
+  <p><b>1 · The passport.</b> It is with the visa agent (ServiceIn/CEV, invoice #687441) against a target return of ~Aug 20. An Aug 26 departure leaves six days of margin. Call, confirm that date against Aug 26, and price the expedite. As a US citizen you must re-enter the United States on the US passport, so the Greek-passport fallback does not remove this dependency — nothing here is bookable with confidence until it is in your hand.</p>
+  <p><b>2 · What the visa actually says when it arrives.</b> Check three fields before you confirm any ticket: the <i>enter before</i> date is on or before Aug 28; the duration of stay per entry covers Aug 28 → Sep 23, which is 26 days; and it is the multiple-entry F. Separately, the signed Tsinghua letter covers Sep 1–30 and names Beijing only, and you now enter three days early at a rail port in the south. That is normally a non-issue on an issued F visa, but carry the letter and this itinerary printed.</p>
+  <p><b>3 · Romy's visa-free entry at West Kowloon.</b> She enters on the Greek passport under China's unilateral visa-free scheme. <b>Confirm before you book the train</b> that the scheme is honoured at the Hong Kong West Kowloon mainland port for a Greek passport — some entry schemes are port-restricted, and that would be an expensive thing to discover at the barrier. If the answer is anything short of a clear yes, fly HKG → Guiyang instead (about 2h, several daily) and pick up the rail to Congjiang from Guiyang; the day still ends in Zhaoxing. Her clock either way: in Aug 28, out Sep 23, 26 days against a 30-day limit. Do not extend the tail.</p>
+  <p><b>4 · Mogao tickets.</b> Foreigners cannot book through the WeChat mini-program. The foreigner allocation is sold in person at the Digital Exhibition Centre, about 9 km outside Dunhuang. Get it in writing from the operator: how, and when, they will secure the 9am English tour on the ¥258 "A" ticket.</p>
+  <p><b>5 · Rain.</b> September closes mountain roads in both Guizhou and Gannan occasionally. Day 6 (Getu River) and Day 17 (western desert) are the two days to sacrifice if it comes to that. Everything else is load-bearing.</p>
+</div>
+
+<div class="panel">
+  <h2>The shape of it</h2>
+  <p><b>Three acts, one internal flight, two rail legs.</b> Act I is subtropical village China — Dong and Miao, indigo, sour fish soup, karst. Act II is the Tibetan plateau at its least-visited: Labrang, Langmusi, the rock towers of Zhagana, then down through Hui Linxia to the Yellow River grottoes. Act III is high desert — the rainbow Danxia, the Silk Road's western passes, and the Mogao caves.</p>
+  <p class="actline"><b>Act I</b> &nbsp;Days 1–7 · Guizhou · in by rail from Hong Kong, loop east then west to Guiyang</p>
+  <p class="actline"><b>Act II</b> &nbsp;Days 8–14 · Gannan · fly Guiyang→Lanzhou (1h35m), then a driving loop out and back</p>
+  <p class="actline"><b>Act III</b> &nbsp;Days 15–18 · Silk Road · rail to Zhangye, on to Dunhuang, fly out</p>
+  <p style="margin-top:10px"><i>One hard transfer day remains — Day 4, Rongjiang→Leishan, about four hours of mountain road. That is the price of reaching places without airports. Everything else is a comfortable half-day or less. The plan still has little padding: treat Days 6 and 17 as the flexible ones.</i></p>
 </div>
 
 <h2 class="act">Act I · Guizhou — villages, indigo, and karst</h2>
-<p class="actnote">Days 1–7 · Private guide-interpreter and driver throughout. Nights are a mix of village guesthouses and simple county-town hotels — this is the low-amenity stretch of the trip, and the one where a guide matters most.</p>
+<p class="actnote">Days 1–7 · Aug 28 – Sep 3 · Private guide-interpreter and driver throughout. Nights are a mix of village guesthouses and simple county-town hotels — this is the low-amenity stretch of the trip, and the one where a guide matters most.</p>
 
 <div class="day">
-  <div class="dh"><span class="dnum">Day 1</span><span class="ddate">Sat Aug 29</span><span class="dtitle">Into the Dong country</span></div>
-  <p>Morning flight from Beijing to Guiyang, then high-speed rail south to Congjiang and a short drive into Zhaoxing. Zhaoxing is the largest Dong village in China — five drum towers, one for each clan, and wind-and-rain bridges over the stream running through the middle. It has become genuinely touristy, so treat it as a comfortable base rather than the destination; the quiet is up the hill tomorrow.</p>
-  <p class="mv"><b>Move</b>Beijing→Guiyang ~3h · rail to Congjiang ~1h · drive ~1h<span class="sep"></span><b>Night</b>Zhaoxing</p>
-  <p class="see"><b>See it</b><a href="https://www.chinadiscovery.com/guizhou/zhaoxing-dong-village.html">Zhaoxing Dong Village</a><span class="dot">·</span><a href="https://www.babagoeschina.com/zhaoxing-guizhou/">Photo-heavy guide</a></p>
+  <div class="dh"><span class="dnum">Day 1</span><span class="ddate">Fri Aug 28</span><span class="dtitle">Off the plane and onto the rails</span></div>
+  <figure class="ph"><img src="img/zhaoxing.jpg" alt="Zhaoxing Dong village, Guizhou" loading="lazy"><figcaption>Zhaoxing — five drum towers, one for each clan.</figcaption></figure>
+  <p>Land at HKG around 06:30 off the overnight transpacific. Airport Express to Kowloon, then Hong Kong West Kowloon station and the 11:14 train straight into Guizhou — mainland immigration is co-located at the station, so you clear China standing still. Congjiang in about four hours, and Zhaoxing is half an hour from the platform. Zhaoxing is the largest Dong village in China: five drum towers, one for each clan, and wind-and-rain bridges over the stream running through the middle. It has become genuinely touristy, so treat it as a comfortable base rather than the destination — the quiet is up the hill tomorrow. Sleep early and hard.</p>
+  <p class="mv"><b>Move</b>HKG 06:30 · West Kowloon→Congjiang ~4h · drive ~30 min<span class="sep"></span><b>Night</b>Zhaoxing</p>
+  <p class="see"><b>See it</b><a href="https://www.chinadiscovery.com/guizhou/zhaoxing-dong-village.html">Zhaoxing Dong Village</a><span class="dot">·</span><a href="https://www.babagoeschina.com/zhaoxing-guizhou/">Photo-heavy guide</a><span class="dot">·</span><a href="https://www.highspeed.mtr.com.hk/en/ticket/destination.html">MTR high-speed destinations</a></p>
 </div>
 
 <div class="day">
-  <div class="dh"><span class="dnum">Day 2</span><span class="ddate">Sun Aug 30</span><span class="dtitle">Tang'an terraces on foot</span></div>
+  <div class="dh"><span class="dnum">Day 2</span><span class="ddate">Sat Aug 29</span><span class="dtitle">Tang'an terraces on foot</span></div>
+  <figure class="ph"><img src="img/basha.jpg" alt="Terraced valley near Congjiang, southeast Guizhou" loading="lazy"><figcaption>Terraced valley near Congjiang — the landscape the stone path climbs through.</figcaption></figure>
   <p>Hike the old stone path from Zhaoxing up to Tang'an, a small terraced Dong hamlet on the ridge above — roughly two hours up through rice terraces, with the valley opening behind you the whole way. Tang'an is an open-air ecomuseum and much quieter than Zhaoxing. Walk back down in the afternoon, or continue along the ridge if the weather is good. Evening: Dong polyphonic choir singing drifts through the village after dark, unamplified and unstaged if you find the right courtyard.</p>
   <p class="mv"><b>Move</b>Walking day, ~10–14 km<span class="sep"></span><b>Night</b>Zhaoxing</p>
   <p class="see"><b>See it</b><a href="https://www.chinadiscovery.com/guizhou/best-guizhou-villages.html">Tang'an &amp; the quiet villages</a><span class="dot">·</span><a href="https://www.chinahighlights.com/zhaoxing/">Zhaoxing area overview</a></p>
 </div>
 
 <div class="day">
-  <div class="dh"><span class="dnum">Day 3</span><span class="ddate">Mon Aug 31</span><span class="dtitle">Basha, and west to Rongjiang</span></div>
+  <div class="dh"><span class="dnum">Day 3</span><span class="ddate">Sun Aug 30</span><span class="dtitle">Basha, and west to Rongjiang</span></div>
+  <figure class="ph"><img src="img/basha2.jpg" alt="Wooden houses and drying racks at Basha Miao village" loading="lazy"><figcaption>Basha — wooden houses and rice-drying racks stacked up the slope.</figcaption></figure>
   <p>Morning at Basha — the Miao village whose men still carry matchlock rifles, the only civilian community in China licensed to do so, and who wear hand-woven hemp dyed with tree bark. The gunfire-and-lusheng welcome is arranged per group rather than run to a public timetable, so have the guide fix it in advance, and go early before the coaches. Afternoon: on to Rongjiang and the small Dong village of Zhanli, cut off enough that it still has its own customs.</p>
   <p class="mv"><b>Move</b>Congjiang→Basha ~30 min · on to Rongjiang ~1.5h<span class="sep"></span><b>Night</b>Rongjiang or Dali</p>
   <p class="see"><b>See it</b><a href="https://architectureontheroad.com/basha-village-guizhou-gunmen-of-china/">Basha photo essay</a><span class="dot">·</span><a href="https://www.trip.com/moments/poi-basha-miao-village-82146/">Basha traveller reports</a></p>
 </div>
 
 <div class="day">
-  <div class="dh"><span class="dnum">Day 4</span><span class="ddate">Tue Sep 1</span><span class="dtitle">Dali indigo, then the long road north</span></div>
-  <p>Morning in Dali Dong village on the Duliu River — six hundred years old, wooden balconies over the stream, and the indigo tradition that defines the place: women harvest the leaves from the hillsides, ferment them into paste, and dye cloth that takes about a year to finish a single bolt. Then the trip's first hard drive, north into the Leigong mountains, arriving at Langde in the afternoon for the long-skirt Miao village and its silver work.</p>
+  <div class="dh"><span class="dnum">Day 4</span><span class="ddate">Mon Aug 31</span><span class="dtitle">Dali indigo, then the long road north</span></div>
+  <figure class="ph"><img src="img/dali.jpg" alt="Indigo-dyed cloth drying, Guizhou" loading="lazy"><figcaption>Indigo — harvested from the hillsides, fermented to paste, and about a year to finish one bolt.</figcaption></figure>
+  <p>Morning in Dali Dong village on the Duliu River — six hundred years old, wooden balconies over the stream, and the indigo tradition that defines the place: women harvest the leaves from the hillsides, ferment them into paste, and dye cloth that takes about a year to finish a single bolt. Then the trip's one hard drive, north into the Leigong mountains, arriving at Langde in the afternoon for the long-skirt Miao village and its silver work.</p>
   <p class="mv"><b>Move</b>Rongjiang→Leishan ~4h on mountain roads<span class="sep"></span><b>Night</b>Langde or Leishan</p>
   <p class="see"><b>See it</b><a href="https://www.chinaeducationaltours.com/guide/guizhou-dali-dong-village.htm">Dali Dong Village</a><span class="dot">·</span><a href="https://www.fodors.com/world/asia/china/experiences/news/the-ancient-village-where-life-is-indigo">The indigo tradition</a></p>
 </div>
 
 <div class="day">
-  <div class="dh"><span class="dnum">Day 5</span><span class="ddate">Wed Sep 2</span><span class="dtitle">Leigongshan ridges</span></div>
+  <div class="dh"><span class="dnum">Day 5</span><span class="ddate">Tue Sep 1</span><span class="dtitle">Leigongshan ridges</span></div>
+  <figure class="ph"><img src="img/langde.jpg" alt="Miao women in Langde village, Guizhou" loading="lazy"><figcaption>Langde — Leishan is the centre of Miao silver work.</figcaption></figure>
   <p>A full day walking the ridges that connect the Miao hamlets above Langde — the kind of hiking where you pass through three villages and see no other outsiders. Lunch is sour fish soup, ideally cooked in a hot stone pot: fermented rice water and tomato, sharp and clean, and the dish the whole province is built around. Afternoon with a silversmith or blacksmith if the guide can arrange it — Leishan is the centre of Miao silver work.</p>
   <p class="mv"><b>Move</b>Hiking day, moderate to hard<span class="sep"></span><b>Night</b>Langde or Leishan</p>
   <p class="see"><b>See it</b><a href="https://www.chinadiscovery.com/guizhou/kaili/langde-miao-village.html">Langde Miao Village</a><span class="dot">·</span><a href="https://www.topchinatravel.com/china-attractions/langde-miao-village.htm">Langde background</a></p>
 </div>
 
 <div class="day">
-  <div class="dh"><span class="dnum">Day 6</span><span class="ddate">Thu Sep 3</span><span class="dtitle">Getu River karst</span></div>
-  <p>Drive west out of the Miao mountains to the Getu River, where the karst stops being scenery and becomes architecture: the Great Arch is one of the largest natural rock spans anywhere, with a cave system beneath it and a river running through. Local climbers free-climb the arch face. Boat in, walk the caves, and see the karst without the Yangshuo crowds.</p>
+  <div class="dh"><span class="dnum">Day 6</span><span class="ddate">Wed Sep 2</span><span class="dtitle">Getu River karst</span></div>
+  <figure class="ph"><img src="img/getuhe.jpg" alt="Karst peaks in mist, southern Guizhou" loading="lazy"><figcaption>Southern Guizhou karst — this is Libo's Xiaoqikong; the Getu arch itself is barely photographed under a free licence.</figcaption></figure>
+  <p>Drive west out of the Miao mountains to the Getu River, where the karst stops being scenery and becomes architecture: the Great Arch is one of the largest natural rock spans anywhere, with a cave system beneath it and a river running through. Local climbers free-climb the arch face. Boat in, walk the caves, and see the karst without the Yangshuo crowds. <b>This is one of your two flexible days</b> — if rain has cost you something earlier, spend it here.</p>
   <p class="mv"><b>Move</b>Leishan→Getuhe ~4–5h<span class="sep"></span><b>Night</b>Getuhe or Anshun</p>
   <p class="see"><b>See it</b><a href="https://www.trip.com/moments/theme/poi-ziyun-getu-river-scenic-spot-83348-attraction-993137/">Getu River scenic area</a></p>
 </div>
 
 <div class="day">
-  <div class="dh"><span class="dnum">Day 7</span><span class="ddate">Fri Sep 4</span><span class="dtitle">Qingyan, and the food night</span></div>
-  <p>Back toward Guiyang, stopping at Qingyan — a Ming-dynasty walled garrison town thirty kilometres south of the city, and the right place to end Act I because it is a genuine eating destination. The list: Qingyan pig's trotters simmered with ginger, rice tofu, tofu balls, siwawa (vegetables rolled in a thin pancake), and a bowl of changwang noodles. Stay into the evening — the coach crowds leave at dusk and the lanes are worth walking after dark.</p>
+  <div class="dh"><span class="dnum">Day 7</span><span class="ddate">Thu Sep 3</span><span class="dtitle">Qingyan, and the food night</span></div>
+  <figure class="ph"><img src="img/qingyan.jpg" alt="Ground opera troupe performing at Qingyan Ancient Town, Guiyang" loading="lazy"><figcaption>Qingyan — a Ming garrison town that is now mostly an eating destination.</figcaption></figure>
+  <p>Back toward Guiyang, stopping at Qingyan — a Ming-dynasty walled garrison town thirty kilometres south of the city, and the right place to end Act I because it is a genuine eating destination. The list: Qingyan pig's trotters simmered with ginger, rice tofu, tofu balls, siwawa (vegetables rolled in a thin pancake), and a bowl of changwang noodles. Stay into the evening — the coach crowds leave at dusk and the lanes are worth walking after dark. Sleep near the airport; tomorrow starts early.</p>
   <p class="mv"><b>Move</b>Getuhe→Qingyan ~2.5h<span class="sep"></span><b>Night</b>Qingyan or Guiyang</p>
   <p class="see"><b>See it</b><a href="https://www.youngpioneertours.com/qinyan-ancient-street-guide-guide/">Qingyan street food</a><span class="dot">·</span><a href="https://www.trip.com/moments/theme/poi-qingyan-ancient-town-80649-attraction-993137/">Qingyan Ancient Town</a></p>
 </div>
 
 <h2 class="act">Act II · Gannan — the Tibetan plateau, without the permits</h2>
-<p class="actnote">Days 8–13 · A second operator takes over here. This is Amdo Tibetan country in southern Gansu — no permits needed, unlike the Tibet Autonomous Region, and very few foreign visitors. Altitude runs roughly 2,900–3,000 m, high enough to notice on the first day but not high enough to need an acclimatization plan.</p>
+<p class="actnote">Days 8–14 · Sep 4 – Sep 10 · A second operator takes over here. This is Amdo Tibetan country in southern Gansu — no permits needed, unlike the Tibet Autonomous Region, and very few foreign visitors. Altitude runs roughly 2,900–3,000 m, high enough to notice on the first day but not high enough to need an acclimatization plan. The act now exits through Hui Linxia rather than in one seven-hour push.</p>
 
 <div class="day">
-  <div class="dh"><span class="dnum">Day 8</span><span class="ddate">Sat Sep 5</span><span class="dtitle">South-west to south of the Yellow River</span></div>
+  <div class="dh"><span class="dnum">Day 8</span><span class="ddate">Fri Sep 4</span><span class="dtitle">North-west, to south of the Yellow River</span></div>
   <p>Fly Guiyang to Lanzhou in the morning — the hinge of the whole trip, and mercifully short. From Lanzhou, drive south-west into the grasslands to Xiahe. The landscape changes completely within two hours: terraced green gives way to open high pasture, and the prayer flags start. Arrive in time for the evening kora, when the pilgrims walk.</p>
   <p class="mv"><b>Move</b>Guiyang→Lanzhou 1h35m · drive to Xiahe ~3h (220 km)<span class="sep"></span><b>Night</b>Xiahe</p>
   <p class="see"><b>See it</b><a href="https://www.chinahighlights.com/xiahe/attraction/labrang-monastery.htm">Xiahe &amp; Labrang</a><span class="dot">·</span><a href="https://www.travelofchina.com/gannan-travel-guide/">Gannan overview</a></p>
 </div>
 
 <div class="day">
-  <div class="dh"><span class="dnum">Day 9</span><span class="ddate">Sun Sep 6</span><span class="dtitle">Labrang</span></div>
+  <div class="dh"><span class="dnum">Day 9</span><span class="ddate">Sat Sep 5</span><span class="dtitle">Labrang</span></div>
+  <figure class="ph"><img src="img/labrang.jpg" alt="Gongtang Pagoda at Labrang Monastery, Xiahe" loading="lazy"><figcaption>Labrang — founded 1709, still a working university with hundreds of monks.</figcaption></figure>
   <p>Labrang is one of the six great Gelug monasteries and, outside Tibet proper, the most important Tibetan Buddhist institution in China — founded 1709, still a working university with hundreds of monks. Its kora is 3.5 km, the longest pilgrim circuit in Tibetan Buddhism, lined with prayer wheels; walking it at dawn alongside the pilgrims is the thing to do here. Afternoon out to the Sangke grasslands, or the Ganjia basin with its octagonal walled ruin, and a visit to a Tibetan family.</p>
   <p class="mv"><b>Move</b>Local, short drives<span class="sep"></span><b>Night</b>Xiahe</p>
   <p class="see"><b>See it</b><a href="https://www.elevatedtrips.com/locations/labrang-monastery/">Labrang Monastery</a><span class="dot">·</span><a href="https://www.travelchinaguide.com/cityguides/gansu/xiahe/">Xiahe &amp; Sangke grassland</a></p>
 </div>
 
 <div class="day">
-  <div class="dh"><span class="dnum">Day 10</span><span class="ddate">Mon Sep 7</span><span class="dtitle">Langmusi, on the provincial line</span></div>
+  <div class="dh"><span class="dnum">Day 10</span><span class="ddate">Sun Sep 6</span><span class="dtitle">Langmusi, on the provincial line</span></div>
+  <figure class="ph"><img src="img/langmusi.jpg" alt="Langmusi, on the Gansu–Sichuan border" loading="lazy"><figcaption>Langmusi — the provincial line runs down the middle of town.</figcaption></figure>
   <p>Drive south to Langmusi, a small monastery town straddling the Gansu–Sichuan border — the provincial line runs down the middle, with Sertri Gompa on the Gansu side and the 600-year-old Kirti Gompa on the Sichuan side. Alpine meadows and forested ridges surround it; the comparison people reach for is rural Austria, which is not quite right but not wrong either. Gahai Lake and open grassland on the way.</p>
   <p class="mv"><b>Move</b>Xiahe→Langmusi ~3h<span class="sep"></span><b>Night</b>Langmusi</p>
   <p class="see"><b>See it</b><a href="https://www.chinadiscovery.com/sichuan/aba/langmusi.html">Langmusi guide</a><span class="dot">·</span><a href="https://en.wikivoyage.org/wiki/Langmusi">Langmusi (Wikivoyage)</a></p>
 </div>
 
 <div class="day">
-  <div class="dh"><span class="dnum">Day 11</span><span class="ddate">Tue Sep 8</span><span class="dtitle">Namo gorge, then into Zhagana</span></div>
+  <div class="dh"><span class="dnum">Day 11</span><span class="ddate">Mon Sep 7</span><span class="dtitle">Namo gorge, then into Zhagana</span></div>
   <p>Morning hike up the Namo gorge behind Kirti Gompa — a narrow limestone cleft that opens into high meadow, a couple of hours up and back, and the sky-burial ground sits on the ridge above town (approach only if your guide says it is appropriate that day). Afternoon: the short drive to Zhagana, which is the reason this act exists.</p>
   <p class="mv"><b>Move</b>Hike ~3h · Langmusi→Zhagana ~2h<span class="sep"></span><b>Night</b>Zhagana</p>
   <p class="see"><b>See it</b><a href="https://www.chinadventure.com/trekking/zhagana.html">Zhagana trekking</a><span class="dot">·</span><a href="https://www.trip.com/moments/theme/destination-gannan-426-itineraries-999195/">Gannan itineraries</a></p>
 </div>
 
 <div class="day">
-  <div class="dh"><span class="dnum">Day 12</span><span class="ddate">Wed Sep 9</span><span class="dtitle">Zhagana, all day</span></div>
+  <div class="dh"><span class="dnum">Day 12</span><span class="ddate">Tue Sep 8</span><span class="dtitle">Zhagana, all day</span></div>
+  <figure class="ph"><img src="img/zhagana.jpg" alt="The Yiwa valley approach to Zhagana in autumn" loading="lazy"><figcaption>The Yiwa valley, on the way in. Zhagana is so little visited that this is close to the only free-licence photograph of it.</figcaption></figure>
   <p>Zhagana means "stone box" in Tibetan: a natural amphitheatre of vertical limestone towers with four Tibetan villages, barley terraces and wooden houses stacked on the valley floor inside it. Three main trails climb out of the basin for the panoramic view down over the villages; take the longest one you have daylight for. This is the solitude core of the trip — almost no foreign visitors reach it, and the walking is as good as anything in the Alps with none of the traffic.</p>
   <p class="mv"><b>Move</b>Full hiking day<span class="sep"></span><b>Night</b>Zhagana</p>
   <p class="see"><b>See it</b><a href="https://www.chinadventure.com/trekking/zhagana.html">Zhagana trails</a><span class="dot">·</span><a href="https://www.chinahighlights.com/gannan/">Gannan region guide</a></p>
 </div>
 
 <div class="day">
-  <div class="dh"><span class="dnum">Day 13</span><span class="ddate">Thu Sep 10</span><span class="dtitle">The long road out</span></div>
-  <p>The trip's longest drive, back north through the grasslands to Lanzhou. Break it at Hezuo or Linxia; the Yellow River appears again on the approach. An early night in the city, because tomorrow is a rail day. If you have energy left, the Gansu Provincial Museum is the best Silk Road collection in the country and a good primer for Act III — free but reservation-only, and September falls inside the window when the original Bronze Galloping Horse is on display rather than the replica.</p>
-  <p class="mv"><b>Move</b>Zhagana→Lanzhou ~7h<span class="sep"></span><b>Night</b>Lanzhou</p>
-  <p class="see"><b>See it</b><a href="https://www.topchinatravel.com/china-attractions/gansu-provincial-museum.htm">Gansu Provincial Museum</a><span class="dot">·</span><a href="https://en.wikipedia.org/wiki/Flying_Horse_of_Gansu">The Flying Horse of Gansu</a></p>
+  <div class="dh"><span class="dnum">Day 13</span><span class="ddate">Wed Sep 9</span><span class="dtitle">Down off the plateau, into Hui country</span><span class="tag">new in v2</span></div>
+  <figure class="ph"><img src="img/linxia.jpg" alt="Dongguan Mosque, Linxia" loading="lazy"><figcaption>Linxia — sometimes called China's Little Mecca, and the sharpest cultural switch on the trip.</figcaption></figure>
+  <p>Out of Zhagana north through the grasslands, breaking at Hezuo, and down into Linxia — about four and a half hours instead of the seven this used to be. Linxia is the centre of Hui Muslim China, sometimes called its Little Mecca: eighty-odd mosques in the prefecture, the Bafang Shisan Xiang quarter of lanes and minarets, and a switch from Tibetan Buddhism to Islam so abrupt it reads as a different country. It is also a craft town — Linxia gourd carving, brick carving, and the Dongxiang and Bao'an minorities who live nowhere else. Eat the hand-pulled beef noodles here rather than waiting for Lanzhou.</p>
+  <p class="mv"><b>Move</b>Zhagana→Linxia ~4.5h via Hezuo<span class="sep"></span><b>Night</b>Linxia</p>
+  <p class="see"><b>See it</b><a href="https://en.wikipedia.org/wiki/Linxia_City">Linxia City</a><span class="dot">·</span><a href="https://www.travelchinaguide.com/cityguides/gansu/linxia/">Linxia travel guide</a></p>
+</div>
+
+<div class="day">
+  <div class="dh"><span class="dnum">Day 14</span><span class="ddate">Thu Sep 10</span><span class="dtitle">Grottoes by boat, then the city</span><span class="tag">new in v2</span></div>
+  <figure class="ph"><img src="img/bingling.jpg" alt="Bingling Temple grottoes above the Yellow River" loading="lazy"><figcaption>Bingling Temple — reachable only by water, which is most of why it survived.</figcaption></figure>
+  <p>Drive to the Liujiaxia reservoir and take a boat across to Bingling Temple: a cliff of Buddhist caves cut over sixteen hundred years, from the Western Qin onward, with a 27-metre Maitreya carved into the rock face and a gorge of eroded pinnacles behind it. It is reachable only by water, which is a large part of why it survived the centuries that flattened easier targets — and a good primer for Mogao at the other end of the trip. On to Lanzhou in the afternoon. If there is energy left, the Gansu Provincial Museum holds the best Silk Road collection in the country: free but reservation-only, and September falls inside the window when the original Bronze Galloping Horse is on display rather than the replica. Early night; tomorrow is a rail day.</p>
+  <p class="mv"><b>Move</b>Linxia→Liujiaxia ~1h · boat ~1h each way · on to Lanzhou ~2h<span class="sep"></span><b>Night</b>Lanzhou</p>
+  <p class="see"><b>See it</b><a href="https://en.wikipedia.org/wiki/Bingling_Temple">Bingling Temple</a><span class="dot">·</span><a href="https://www.topchinatravel.com/china-attractions/gansu-provincial-museum.htm">Gansu Provincial Museum</a><span class="dot">·</span><a href="https://en.wikipedia.org/wiki/Flying_Horse_of_Gansu">The Flying Horse of Gansu</a></p>
 </div>
 
 <h2 class="act">Act III · The Silk Road — desert, colour, and the caves</h2>
-<p class="actnote">Days 14–17 · The infrastructure gets easy here: high-speed rail between cities, day drivers for the desert sites. September is the ideal window — dry, clear, and before the October Golden Week crush. Note you are skipping Jiayuguan's Great Wall fort deliberately, since Romy will see the Wall properly from Beijing after Sep 15.</p>
+<p class="actnote">Days 15–18 · Sep 11 – Sep 14 · The infrastructure gets easy here: high-speed rail between cities, day drivers for the desert sites. September is the ideal window — dry, clear, and before the October Golden Week crush. You are skipping Jiayuguan's Great Wall fort deliberately, since Romy will see the Wall properly from Beijing after Sep 15.</p>
 
 <div class="day">
-  <div class="dh"><span class="dnum">Day 14</span><span class="ddate">Fri Sep 11</span><span class="dtitle">Rainbow rock</span></div>
+  <div class="dh"><span class="dnum">Day 15</span><span class="ddate">Fri Sep 11</span><span class="dtitle">Rainbow rock</span></div>
+  <figure class="ph"><img src="img/danxia.jpg" alt="Striped sandstone at Zhangye National Geopark" loading="lazy"><figcaption>Zhangye Danxia — sandstone laid down in stripes, tilted on end, stripped bare.</figcaption></figure>
   <p>High-speed rail north-west to Zhangye, into the Hexi Corridor — the thin strip of oasis between desert and mountain that the entire Silk Road had to thread. Late afternoon at the Danxia landforms: sandstone laid down in stripes of red, orange, cream and green, tilted on end and stripped bare. Go late, roughly two hours before sunset when the light is low and the colour saturates; the quieter Binggou canyon nearby is the version without the crowds.</p>
   <p class="mv"><b>Move</b>Lanzhou→Zhangye by rail ~3h<span class="sep"></span><b>Night</b>Zhangye</p>
   <p class="see"><b>See it</b><a href="https://www.chinadiscovery.com/gansu/zhangye/danxia-landform-geographical-park.html">Zhangye Danxia geopark</a><span class="dot">·</span><a href="https://www.fabionodariphoto.com/en/rainbow-mountains-china-travel-guide-zhangye/">Photographer's guide</a></p>
 </div>
 
 <div class="day">
-  <div class="dh"><span class="dnum">Day 15</span><span class="ddate">Sat Sep 12</span><span class="dtitle">Dawn colour, then deeper into the desert</span></div>
+  <div class="dh"><span class="dnum">Day 16</span><span class="ddate">Sat Sep 12</span><span class="dtitle">Dawn colour, then deeper into the desert</span></div>
+  <figure class="ph"><img src="img/mingsha.jpg" alt="Crescent Lake among the dunes at Mingsha Shan, Dunhuang" loading="lazy"><figcaption>Crescent Lake — a spring-fed pool that has never been buried in all the centuries it has been recorded.</figcaption></figure>
   <p>Back to the Danxia at opening for the dawn light and an empty park — worth the alarm, and the colours are deepest just after rain if you get lucky. Then west to Dunhuang, the last real oasis before the desert proper. Arrive late afternoon and go straight to Mingsha Shan: dunes several hundred metres high with Crescent Lake, a spring-fed pool shaped like its name, sitting in a hollow between them and somehow never buried in all the centuries it has been recorded. Climb for sunset.</p>
   <p class="mv"><b>Move</b>Zhangye→Dunhuang by rail ~5h or short flight — let the operator pick<span class="sep"></span><b>Night</b>Dunhuang</p>
   <p class="see"><b>See it</b><a href="https://www.chinadiscovery.com/gansu/dunhuang/mingsha-mountain-crescent-lake.html">Mingsha Shan &amp; Crescent Lake</a><span class="dot">·</span><a href="https://www.travelchinaguide.com/attraction/gansu/dunhuang/sand.htm">Echoing-Sand Mountain</a></p>
 </div>
 
 <div class="day">
-  <div class="dh"><span class="dnum">Day 16</span><span class="ddate">Sun Sep 13</span><span class="dtitle">The western passes</span></div>
-  <p>A full day out into the desert west of Dunhuang, and the emptiest landscape of the trip. Yumen Pass — the Jade Gate — is a lone rammed-earth block on gravel plain, the checkpoint everything bound for Central Asia once passed through. Nearby, eroded ramparts of the Han-dynasty Great Wall, older than the Ming brickwork tourists know, built of reeds and sand. Then the Yardang geopark, wind-carved rock formations in an old lakebed that the Chinese call the Ghost City; stay for sunset if the guide is willing.</p>
+  <div class="dh"><span class="dnum">Day 17</span><span class="ddate">Sun Sep 13</span><span class="dtitle">The western passes</span></div>
+  <figure class="ph"><img src="img/yardang.jpg" alt="Wind-carved rock at Dunhuang Yardang National Geopark" loading="lazy"><figcaption>The Yardang geopark — wind-carved rock in an old lakebed, locally the Ghost City.</figcaption></figure>
+  <p>A full day out into the desert west of Dunhuang, and the emptiest landscape of the trip. Yumen Pass — the Jade Gate — is a lone rammed-earth block on gravel plain, the checkpoint everything bound for Central Asia once passed through. Nearby, eroded ramparts of the Han-dynasty Great Wall, older than the Ming brickwork tourists know, built of reeds and sand. Then the Yardang geopark, wind-carved rock formations in an old lakebed that the Chinese call the Ghost City; stay for sunset if the guide is willing. <b>Your second flexible day</b> — this is the one to shorten if the schedule has slipped.</p>
   <p class="mv"><b>Move</b>Full-day car ~8:30am–6:30pm, no public transport out there<span class="sep"></span><b>Night</b>Dunhuang</p>
   <p class="see"><b>See it</b><a href="https://www.chinadiscovery.com/gansu/dunhuang/yumen-pass.html">Yumen Pass</a><span class="dot">·</span><a href="https://www.trip.com/moments/poi-yadan-national-geological-park-76516">Yardang geopark</a></p>
 </div>
 
 <div class="day">
-  <div class="dh"><span class="dnum">Day 17</span><span class="ddate">Mon Sep 14</span><span class="dtitle">Mogao, and out</span></div>
+  <div class="dh"><span class="dnum">Day 18</span><span class="ddate">Mon Sep 14</span><span class="dtitle">Mogao, and out</span></div>
+  <figure class="ph"><img src="img/mogao.jpg" alt="Cave 96, the nine-storey pavilion at the Mogao Grottoes" loading="lazy"><figcaption>Cave 96 at Mogao — seven hundred caves over a thousand years of painting.</figcaption></figure>
   <p>The Mogao Grottoes to finish: seven hundred caves cut into a cliff over a thousand years, painted floor to ceiling, the greatest surviving repository of Buddhist art anywhere. Take the 9am English tour — the ¥258 "A" ticket covers eight caves plus the digital films. Remember foreigners cannot book this through the WeChat system; the allocation is sold in person at the Digital Exhibition Centre, so have the operator handle it days ahead. Afternoon flight to Beijing, landing in the evening.</p>
   <p class="mv"><b>Move</b>Dunhuang→Beijing, afternoon/evening flight<span class="sep"></span><b>Night</b>Beijing</p>
   <p class="see"><b>See it</b><a href="https://www.chinadiscovery.com/gansu/dunhuang/mogao-caves/tickets.html">Mogao tickets &amp; tour types</a><span class="dot">·</span><a href="https://www.lonelyplanet.com/points-of-interest/mogao-grottoes/1496278">Mogao Grottoes</a></p>
 </div>
 
 <div class="fin">
-  <p><span class="d">Tue Sep 15</span> — In Beijing, rested. You slept in your own bed and the work block starts clean. Beijing and Shenzhen run through Sep 23.</p>
+  <p><span class="d">Tue Sep 15</span> — In Beijing, rested. You slept in your own bed and the work block starts clean: Tsinghua on the 16th, Guanghua on the 17th, Shenzhen from the 19th, home from Hong Kong on the 23rd.</p>
 </div>
 
 <h2 class="act">What to hand the operators</h2>
 <p>Split this at Day 7. Send Act I to the Guizhou operator and Acts II–III to the Gansu operator, and ask each to price their half against it. Points to make explicit:</p>
 <ul>
-  <li><b>Guizhou:</b> we want Zhanli and Dali, not Xijiang Qianhu. Confirm the driver has personally driven Rongjiang→Leishan. Ask them to pre-arrange the Basha welcome and, if possible, a silversmith visit and one village meal.</li>
-  <li><b>Gannan:</b> confirm lodging inside Zhagana rather than in Diebu town, and ask whether the Day 13 drive can break somewhere worth an hour rather than being pure transit.</li>
+  <li><b>Guizhou:</b> we want Zhanli and Dali, not Xijiang Qianhu. Confirm the driver has personally driven Rongjiang→Leishan. Ask them to pre-arrange the Basha welcome and, if possible, a silversmith visit and one village meal. Note the arrival is by rail into Congjiang, not by air into Guiyang — they need to meet the train.</li>
+  <li><b>Gannan:</b> confirm lodging inside Zhagana rather than in Diebu town. The exit is now Zhagana→Linxia→Bingling→Lanzhou over two days, so ask them to confirm the Liujiaxia boat operates on Sep 10 and at what water level, and whether the Bingling visit is the speedboat or the slow ferry.</li>
   <li><b>Silk Road:</b> Mogao tickets are the one genuine booking risk — get written confirmation of how and when they will secure the English tour. Also ask them to compare rail vs. flight for Zhangye→Dunhuang on that specific date.</li>
   <li><b>All three:</b> what happens if rain closes a road. You want to hear a specific alternative, not reassurance.</li>
 </ul>
 
+<h2 class="act">Booking plan — four and a half weeks</h2>
+<div class="tw">
+<table>
+  <tr><th>When</th><th>Do</th></tr>
+  <tr><td class="dt">Now<br>Jul 25–31</td><td><b>The passport is the gate.</b> Confirm the package is with ServiceIn; call to confirm the ~Aug 20 return against an <b>Aug 26</b> departure and price the expedite. Send the operator inquiry to 2–3 Guizhou and 2–3 Gansu/Gannan operators — English-speaking Guizhou guides are the scarcest resource in this whole plan. Request the OSU loaner laptop (Secure Research needs ~2 weeks). Confirm the unilateral visa-free scheme covers a Greek passport at the Hong Kong West Kowloon mainland port.</td></tr>
+  <tr><td class="dt">Week 2<br>Aug 1–7</td><td>Compare quotes, pick one operator per act, lock the itinerary in writing and pay deposits — Guizhou first. Book the changeable international HKG round trip. Book the domestic legs: Guiyang→Lanzhou, Lanzhou→Zhangye, Zhangye→Dunhuang, Dunhuang→Beijing, Beijing→Shenzhen.</td></tr>
+  <tr><td class="dt">Week 3<br>Aug 8–14</td><td>City hotels: Guiyang, Linxia, Lanzhou, Zhangye, Dunhuang, Beijing, Shenzhen — plus a refundable Hong Kong room in case the transpacific slips. <b>Book the West Kowloon→Congjiang train the day the window opens, around Aug 13.</b> Operators confirm rural lodging and the Mogao arrangement in writing. Install both VPNs and the eSIM, set up Alipay and WeChat Pay, download Pleco and offline Amap — all of this has to happen before you land.</td></tr>
+  <tr><td class="dt">Week 4<br>Aug 15–21</td><td>Passport back (~Aug 20). The moment it is in hand: read the visa's three fields (enter-before date, duration of stay, multiple entry) and confirm the international ticket. Final written confirmations from both operators, with guide names and phone/WeChat contacts.</td></tr>
+  <tr><td class="dt">Final days<br>Aug 22–25</td><td>Draw RMB cash for the village stretches — Alipay covers cities but deep Guizhou and Gannan run on cash. Print this itinerary, the invitation letter, both operator confirmations, and the two-passport carry sheet (marked backup only). Back up and clean devices per the tech notes.</td></tr>
+  <tr><td class="dt">Depart<br>Wed Aug 26</td><td>CMH in the evening. Hong Kong at 06:30 on the 28th. Zhaoxing that afternoon.</td></tr>
+</table>
+</div>
+
+<h2 class="act">Photo credits</h2>
+<p class="credits">
+All photographs from Wikimedia Commons under Creative Commons licences, resized for the web. In order of appearance:
+<a href="https://commons.wikimedia.org/wiki/File:Hong_Kong_Harbour_Night_2019-06-11.jpg">Hong Kong Harbour</a> — Benh Lieu Song, CC BY-SA 4.0 ·
+<a href="https://commons.wikimedia.org/wiki/File:Zhaoxing_001.jpg">Zhaoxing</a> — Rutger van der Maar, CC BY 2.0 ·
+<a href="https://commons.wikimedia.org/wiki/File:%E7%88%AC%E5%B2%9C%E6%B2%99%E8%8B%97%E5%AF%A8-%E6%A1%82%E7%A9%BF%E8%B6%8A_-_panoramio_(6).jpg">Congjiang terraces</a> and
+<a href="https://commons.wikimedia.org/wiki/File:%E7%88%AC%E5%B2%9C%E6%B2%99%E8%8B%97%E5%AF%A8-%E6%A1%82%E7%A9%BF%E8%B6%8A_-_panoramio_(11).jpg">Basha village</a> — 龙歌谷, CC BY-SA 3.0 ·
+<a href="https://commons.wikimedia.org/wiki/File:Indigo-guizhou.jpg">Guizhou indigo</a> — gitane, CC BY 3.0 ·
+<a href="https://commons.wikimedia.org/wiki/File:Miao_women_in_Langde_village_(2006).jpg">Langde</a> — Tianjin24, CC BY 2.0 ·
+<a href="https://commons.wikimedia.org/wiki/File:Xiaoqikong.JPG">Libo karst</a> — Fanghong, CC BY-SA 3.0 ·
+<a href="https://commons.wikimedia.org/wiki/File:Ground_Opera_Troupe_at_Qingyan_Ancient_Town,_Guiyang(2).jpg">Qingyan</a> — xiquinhosilva, CC BY 2.0 ·
+<a href="https://commons.wikimedia.org/wiki/File:Gungthang_Baota,_Labrang_Si.jpg">Labrang</a> — Yumeto, CC BY-SA 4.0 ·
+<a href="https://commons.wikimedia.org/wiki/File:Langmusi.jpg">Langmusi</a> — NoGhost, CC BY-SA 4.0 ·
+<a href="https://commons.wikimedia.org/wiki/File:%E7%9B%8A%E5%93%87%E7%A7%8B%E8%89%B2_-_panoramio.jpg">Yiwa valley</a> — gaoxs, CC BY-SA 3.0 ·
+<a href="https://commons.wikimedia.org/wiki/File:5613-Linxia-Dongguan-Mosque.jpg">Linxia Dongguan Mosque</a> — Vmenkov, CC BY-SA 3.0 ·
+<a href="https://commons.wikimedia.org/wiki/File:Bingling_Temple_Grottoes_1.jpg">Bingling Temple</a> — Thebrainchamber1, CC BY-SA 4.0 ·
+<a href="https://commons.wikimedia.org/wiki/File:Buildings_in_Zhangye_National_Geopark.jpg">Zhangye Danxia</a> — Terry Wu, CC BY-SA 2.0 ·
+<a href="https://commons.wikimedia.org/wiki/File:China-Crescent-Lake.jpg">Crescent Lake</a> — Alex Kwok, CC BY-SA 3.0 ·
+<a href="https://commons.wikimedia.org/wiki/File:Dunhuang_Yardang_National_Geopark.jpg">Yardang geopark</a> — lwtt93, CC BY 2.0 ·
+<a href="https://commons.wikimedia.org/wiki/File:Cave_96_of_Mogao_Grottoes_(20230918151944).jpg">Mogao Cave 96</a> — N509FZ, CC BY-SA 4.0.
+</p>
+
 <footer>
-  Draft for discussion · July 24, 2026 · transfer times are estimates from published routings — have your operators confirm against real road conditions. The passport remains the gate: nothing here is bookable with confidence until it is back from the visa agent around Aug 20.
+  v2 · July 25, 2026 · Transfer times are estimates from published routings — have your operators confirm them against real road conditions. Flight and train departure times are typical published schedules for these routes and must be checked against the actual Aug 26 / Aug 28 / Sep 23 dates before booking. The passport remains the gate: nothing here is bookable with confidence until it is back from the visa agent around Aug 20.
 </footer>
 
 </div>
