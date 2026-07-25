@@ -111,6 +111,12 @@
   tr.hd td{background:var(--lightbg);font-weight:700;color:var(--navy);font-size:.78rem;
            text-transform:uppercase;letter-spacing:.06em}
   td.num{white-space:nowrap;color:var(--grey);font-size:.8rem;font-variant-numeric:tabular-nums}
+  /* the to-do table needs most of its width in the options column */
+  table.todo{table-layout:fixed;min-width:740px}
+  table.todo th:nth-child(1),table.todo td:nth-child(1){width:34px}
+  table.todo th:nth-child(2),table.todo td:nth-child(2){width:25%}
+  table.todo th:nth-child(3),table.todo td:nth-child(3){width:13%}
+  table.todo tr.hd td{width:auto}
   .cr{white-space:nowrap;font-size:.95rem;letter-spacing:1px}
   .cr b{letter-spacing:0;font-size:.72rem;text-transform:uppercase;color:var(--grey);
         margin-left:5px;font-weight:600}
@@ -552,7 +558,7 @@
 <p class="actnote">Forty-three items, in the order they gate each other. Where there is a real choice, the alternatives are listed with the recommendation first. Nothing in sections C onward is safe to pay for until section A clears.</p>
 
 <div class="tw">
-<table>
+<table class="todo">
   <tr><th>#</th><th>Item</th><th>By when</th><th>Options and alternatives</th></tr>
 
   <tr class="hd"><td colspan="4">A · Gating — these block everything else</td></tr>
