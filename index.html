@@ -117,6 +117,8 @@
   table.todo th:nth-child(2),table.todo td:nth-child(2){width:25%}
   table.todo th:nth-child(3),table.todo td:nth-child(3){width:13%}
   table.todo tr.hd td{width:auto}
+  /* nowrap would overflow a fixed-width column */
+  table.todo td.dt{white-space:normal}
   .cr{white-space:nowrap;font-size:.95rem;letter-spacing:1px}
   .cr b{letter-spacing:0;font-size:.72rem;text-transform:uppercase;color:var(--grey);
         margin-left:5px;font-weight:600}
