@@ -22,7 +22,9 @@
     }
   }
   *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
+  /* No smooth scrolling: this page is ~24,000px tall and smooth animation
+     over that distance fights the lazy-image layout shift, which lands
+     fragment links in the wrong place. Instant jumps are correct here. */
   body{
     margin:0; padding:0; background:var(--bg);
     font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
@@ -680,5 +682,18 @@ Maps drawn from <a href="https://www.naturalearthdata.com/">Natural Earth</a> pu
 </footer>
 
 </div>
+<script>
+// Re-apply the hash target once everything has laid out. Twenty lazy images on a
+// very long page mean the document keeps growing after the browser has already
+// resolved the fragment, so a deep link like #d13 otherwise lands short.
+(function () {
+  function land() {
+    if (!location.hash) return;
+    var el = document.getElementById(location.hash.slice(1));
+    if (el) el.scrollIntoView();
+  }
+  window.addEventListener('load', function () { land(); setTimeout(land, 120); });
+})();
+</script>
 </body>
 </html>
