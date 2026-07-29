@@ -53,6 +53,16 @@
   .stop b{display:block;color:var(--navy);font-size:.9rem;line-height:1.25}
   .stop span{display:block;color:var(--grey);font-size:.75rem;margin-top:4px;line-height:1.25}
   .map{margin:0 0 18px}.map img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:9px}
+  .farelead{display:grid;grid-template-columns:1.05fr 1fr;gap:14px;margin:14px 0 20px}
+  .farebox{border:1px solid var(--line);border-radius:9px;padding:17px 18px;background:var(--bg)}
+  .farebox.best{border-color:var(--green);background:var(--greenbg)}
+  .farebox .kicker{font-size:.7rem;text-transform:uppercase;letter-spacing:.09em;color:var(--grey);font-weight:700}
+  .farebox h3{margin:4px 0 3px;color:var(--navy);font-size:1.08rem}
+  .farebox .price{font-size:1.72rem;line-height:1.15;color:var(--navy);font-weight:750;letter-spacing:-.025em}
+  .farebox .price span{font-size:.75rem;color:var(--grey);font-weight:500;letter-spacing:0}
+  .farebox p{font-size:.88rem;margin:7px 0 0}
+  .save{color:var(--green);font-weight:700}
+  .fine{color:var(--grey);font-size:.8rem}
   .tw{overflow-x:auto;margin:0 0 18px;-webkit-overflow-scrolling:touch}
   table{border-collapse:collapse;width:100%;font-size:.89rem;min-width:650px}
   th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
@@ -90,6 +100,7 @@
     .stop:not(:last-child)::after{display:none}
     .day{grid-template-columns:1fr}
     .day img{height:auto;max-height:340px}
+    .farelead{grid-template-columns:1fr}
   }
   @media (max-width:620px){
     .wrap{padding:22px 15px 60px}
@@ -130,6 +141,7 @@
     <li><a href="#gannan">Act I · Gannan</a></li>
     <li><a href="#hexi">Act II · Hexi Corridor</a></li>
     <li><a href="#work">Beijing, Shenzhen &amp; Hong Kong</a></li>
+    <li><a href="#flights">Airfare tracker</a></li>
     <li><a href="#transport">Flights, rail &amp; hotels</a></li>
     <li><a href="#calls">Guide calls</a></li>
     <li><a href="#operators">Guide decision</a></li>
@@ -150,8 +162,13 @@
 </div>
 
 <figure class="map">
+  <img src="map-route.svg" alt="Map of the active China route from Lanzhou through Gannan and the Hexi Corridor to Beijing, Shenzhen and Hong Kong" loading="eager" width="1000" height="941">
+  <figcaption>Full route after the Guizhou reset: Lanzhou and Gannan → Zhangye and Dunhuang → Beijing → Shenzhen → Hong Kong. The international gateway is still a fare decision, not a change to the ground itinerary.</figcaption>
+</figure>
+
+<figure class="map">
   <img src="map-act2.svg" alt="Map of the Gannan loop from Lanzhou through Xiahe, Langmusi, Zhagana, Linxia and Bingling" loading="lazy" width="1000" height="738">
-  <figcaption>The active Gannan loop: Lanzhou → Xiahe → Langmusi → Zhagana → Linxia → Bingling → Lanzhou.</figcaption>
+  <figcaption>Gannan detail: Lanzhou → Xiahe → Langmusi → Zhagana → Linxia → Bingling → Lanzhou.</figcaption>
 </figure>
 
 <h2 class="section" id="calendar">Master calendar <a class="top" href="#top">top ↑</a></h2>
@@ -159,7 +176,7 @@
 <table>
   <tr><th>Date</th><th>Place / plan</th><th>Transport</th><th>Status</th></tr>
   <tr class="group"><td colspan="4">Shared trip</td></tr>
-  <tr><td class="date">Aug 31–Sep 3</td><td>Fly together to Lanzhou; one protected low-altitude night before the plateau</td><td>CMH→LHW itinerary under complete reprice</td><td><span class="badge open">open</span></td></tr>
+  <tr><td class="date">Aug 31–Sep 3</td><td>Fly together to Lanzhou; one protected low-altitude night before the plateau</td><td>Current fare leader: CMH→HKG Aug 31, overnight buffer, HKG→LHW Sep 3; protected CMH→LHW Sep 1 remains the simpler benchmark</td><td><span class="badge sent">prices tracked</span></td></tr>
   <tr><td class="date">Sep 4–10</td><td>Gannan: Xiahe, Labrang, Langmusi, Zhagana, Linxia, Bingling</td><td>Private MPV + Bingling speedboat; scenic shuttles</td><td><span class="badge open">operator open</span></td></tr>
   <tr><td class="date">Sep 11</td><td>Lanzhou→Zhangye; Giant Buddha Temple; Danxia at sunset</td><td>D2743 08:29–11:10; then private car</td><td><span class="badge open">sale Aug 28</span></td></tr>
   <tr><td class="date">Sep 12–13</td><td>Dunhuang: Crescent Spring if comfortable; Yumen, Han Wall, Yadan</td><td>Private Zhangye→Dunhuang road transfer + touring car</td><td><span class="badge open">contract open</span></td></tr>
@@ -278,11 +295,87 @@
   </div>
 </div>
 
+<h2 class="section" id="flights">Airfare tracker &amp; premium-economy strategy <a class="top" href="#top">top ↑</a></h2>
+<p class="note">Google Flights snapshot checked Jul 29, 2026 · USD · one adult in each underlying search · fares are live, not held or ticketed.</p>
+
+<div class="panel decision">
+  <p><b>Current premium-economy leader: use Hong Kong as the shared outbound gateway, but ticket each traveler separately.</b> Both travelers can take the same Aug 31 CMH→HKG flight, spend Sep 2 in Hong Kong, and use the same Sep 3 HKG→LHW flight. Romy's international ticket returns PEK→CMH Sep 20; Zahi's returns HKG→CMH Sep 24.</p>
+  <p>The full-night Hong Kong buffer makes the separately ticketed China feeder reasonable. It is still not protected by the international ticket, so baggage must be reclaimed and the Sep 3 flight should not be replaced with a tight same-day connection.</p>
+</div>
+
+<div class="farelead">
+  <div class="farebox best">
+    <div class="kicker">Current cost leader · two travelers combined</div>
+    <h3>Hong Kong gateway + Sep 3 feeder</h3>
+    <div class="price">$5,449 <span>premium economy</span></div>
+    <p>$3,847 in economy. Includes two $627 HKG→LHW feeder fares. <span class="save">Premium economy saves about $2,651</span> versus the direct-open-jaw benchmark.</p>
+  </div>
+  <div class="farebox">
+    <div class="kicker">Simpler protected benchmark · two travelers combined</div>
+    <h3>Direct open jaws to Lanzhou</h3>
+    <div class="price">$8,100 <span>premium economy</span></div>
+    <p>$4,179 in economy. One protected ticket per traveler through LHW, with the same Sep 1 United/Air China outbound; materially simpler but the premium-economy surcharge is unusually high.</p>
+    <div class="actions">
+      <a class="button secondary" href="https://www.google.com/travel/flights/search?tfs=CBwQAhojEgoyMDI2LTA5LTAxagwIAhIIL20vMDFzbW1yBwgBEgNMSFcaIxIKMjAyNi0wOS0yMGoHCAESA1BFS3IMCAISCC9tLzAxc21tQAFIAnABggELCP___________wGYAQM&amp;hl=en&amp;gl=us&amp;curr=USD">Romy direct PE</a>
+      <a class="button secondary" href="https://www.google.com/travel/flights/search?tfs=CBwQAhojEgoyMDI2LTA5LTAxagwIAhIIL20vMDFzbW1yBwgBEgNMSFcaIxIKMjAyNi0wOS0yNGoHCAESA0hLR3IMCAISCC9tLzAxc21tQAFIAnABggELCP___________wGYAQM&amp;hl=en&amp;gl=us&amp;curr=USD">Zahi direct PE</a>
+    </div>
+  </div>
+</div>
+
+<div class="tw">
+<table>
+  <tr><th>Traveler / construction</th><th>Economy</th><th>Premium economy</th><th>Working flight</th></tr>
+  <tr><td><b>Romy · HKG gateway</b><br>CMH→HKG Aug 31 + PEK→CMH Sep 20</td><td>$1,397<br><span class="fine">+$627 HKG→LHW</span></td><td>$2,315<br><span class="fine">+$627 HKG→LHW</span></td><td>Air Canada 16:05 from CMH; HKG 05:15 on Sep 2</td></tr>
+  <tr><td><b>Zahi · HKG gateway</b><br>CMH↔HKG Aug 31 / Sep 24</td><td>$1,196<br><span class="fine">+$627 HKG→LHW</span></td><td>$1,880<br><span class="fine">+$627 HKG→LHW</span></td><td>Same Air Canada outbound; traveler-specific return</td></tr>
+  <tr><td><b>Romy · direct benchmark</b><br>CMH→LHW Sep 1 + PEK→CMH Sep 20</td><td>$2,281</td><td>$4,304</td><td>07:00 CMH; SFO and PEK; LHW 22:15 on Sep 2</td></tr>
+  <tr><td><b>Zahi · direct benchmark</b><br>CMH→LHW Sep 1 + HKG→CMH Sep 24</td><td>$1,898</td><td>$3,796</td><td>Same Sep 1 outbound</td></tr>
+</table>
+</div>
+
+<div class="cards">
+  <div class="card">
+    <h3>Romy · track both cabins</h3>
+    <p>Open jaw via Hong Kong on the outbound and Beijing on the return. Premium economy is shown as mixed cabin: economy on short feeders and premium economy on the eligible long-haul sector.</p>
+    <div class="actions">
+      <a class="button" href="https://www.google.com/travel/flights/search?tfs=CBwQAhojEgoyMDI2LTA4LTMxagwIAhIIL20vMDFzbW1yBwgBEgNIS0caIxIKMjAyNi0wOS0yMGoHCAESA1BFS3IMCAISCC9tLzAxc21tQAFIAnABggELCP___________wGYAQM&amp;hl=en&amp;gl=us&amp;curr=USD">Premium economy</a>
+      <a class="button secondary" href="https://www.google.com/travel/flights/search?tfs=CBwQAhojEgoyMDI2LTA4LTMxagwIAhIIL20vMDFzbW1yBwgBEgNIS0caIxIKMjAyNi0wOS0yMGoHCAESA1BFS3IMCAISCC9tLzAxc21tQAFIAXABggELCP___________wGYAQM&amp;hl=en&amp;gl=us&amp;curr=USD">Economy</a>
+    </div>
+  </div>
+  <div class="card">
+    <h3>Zahi · track both cabins</h3>
+    <p>Round trip CMH↔HKG, Aug 31–Sep 24. The Air Canada premium-economy option is the cash leader; Cathay's one-stop premium-economy alternative was about $2,388 before the China feeder.</p>
+    <div class="actions">
+      <a class="button" href="https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI2LTA4LTMxagcIARIDQ01IcgcIARIDSEtHGh4SCjIwMjYtMDktMjRqBwgBEgNIS0dyBwgBEgNDTUhAAUgCcAGCAQsI____________AZgBAQ&amp;tfu=EgYIABAAGAA&amp;hl=en&amp;gl=us&amp;curr=USD">Premium economy</a>
+      <a class="button secondary" href="https://www.google.com/travel/flights?q=Round-trip%20flights%20from%20CMH%20to%20HKG%20departing%202026-08-31%20returning%202026-09-24&amp;curr=USD&amp;hl=en&amp;gl=us">Economy</a>
+    </div>
+  </div>
+  <div class="card">
+    <h3>Shared China feeder · Sep 3</h3>
+    <p>The usable daylight leader is HKG 08:15→LHW 15:15 via Wuhan on Cathay/Air China, about $627 per traveler. The $176–188 options arrive Sep 4 and therefore fail the Gannan handoff.</p>
+    <div class="actions">
+      <a class="button" href="https://www.google.com/travel/flights?q=One-way%20flights%20from%20HKG%20to%20LHW%20on%202026-09-03&amp;curr=USD&amp;hl=en&amp;gl=us">Open Sep 3 search</a>
+    </div>
+  </div>
+  <div class="card">
+    <h3>Domestic flights</h3>
+    <p>DNH→PEK: keep CA1286 at 16:00–19:15; Google currently shows its price as unavailable. PEK→SZX: multiple nonstops, with Shenzhen Airlines around $320; 07:55 or 09:20 protects the Sep 21 seminar.</p>
+    <div class="actions">
+      <a class="button" href="https://www.google.com/travel/flights?q=One-way%20flights%20from%20DNH%20to%20PEK%20on%202026-09-14&amp;curr=USD&amp;hl=en&amp;gl=us">DNH→PEK</a>
+      <a class="button secondary" href="https://www.google.com/travel/flights?q=One-way%20flights%20from%20PEK%20to%20SZX%20on%202026-09-20&amp;curr=USD&amp;hl=en&amp;gl=us">PEK→SZX</a>
+    </div>
+  </div>
+</div>
+
+<div class="panel">
+  <p><b>How to optimize before purchase:</b> turn on Google price tracking separately for Economy and Premium economy on all four international links; keep the same Air Canada outbound selected for both travelers; verify exactly which segment is in premium economy; and run logged-in AA and United one-way award searches against these cash totals. Do not buy airline gift cards for this construction. Save a same-flight economy screenshot for any host reimbursement file.</p>
+  <p class="fine"><a href="https://support.google.com/travel/answer/6235879?hl=en">Google's price-tracking instructions</a> · The “Cheapest” tab can include self-transfers or airport changes, so the working comparison uses the “Best” itineraries and a deliberate overnight before the only separate ticket.</p>
+</div>
+
 <h2 class="section" id="transport">Flights, rail &amp; hotels <a class="top" href="#top">top ↑</a></h2>
 <div class="tw">
 <table>
   <tr><th>Item</th><th>Working plan</th><th>Decision / purchase gate</th></tr>
-  <tr><td>Shared outbound</td><td>Two travelers, CMH→Lanzhou, arrive by Sep 3</td><td>Reprice Cathay/HKG, United/Air China and Asian-gateway options; compare cash with AA/United awards before Jul 31</td></tr>
+  <tr><td>Shared outbound</td><td>Fare leader: same Aug 31 Air Canada CMH→HKG; Sep 2 Hong Kong buffer; same Sep 3 HKG→LHW</td><td>Verify both passenger-specific tickets retain the identical outbound, then price the China feeder direct with the operating carriers before purchase</td></tr>
   <tr><td>DNH→PEK</td><td>CA1286 Sep 14, 16:00–19:15</td><td>Buy after Steven confirms the flight-safe Mogao clock</td></tr>
   <tr><td>Sep 20 split</td><td>R: PEK→CMH on one protected ticket. Z: early/midday PEK→SZX nonstop</td><td>Search cash + miles; prefer the same Beijing airport for the shared transfer</td></tr>
   <tr><td>Return</td><td>Z only, HKG→CMH Sep 24; Cathay/ORD remains the leading structure</td><td>Reprice from scratch; former Sep 25 quote is obsolete</td></tr>
@@ -356,7 +449,7 @@
 </ol>
 
 <footer>
-  Current itinerary rebuilt July 29, 2026 after the Guizhou cancellation and traveler split. All flight and rail times must be rechecked at purchase. This page is public and directly accessible without a password.
+  Current itinerary rebuilt July 29, 2026 after the Guizhou cancellation and traveler split; airfare snapshot refreshed July 29. All prices, flight times and rail times must be rechecked at purchase. This page is public and directly accessible without a password.
 </footer>
 
 </div>
